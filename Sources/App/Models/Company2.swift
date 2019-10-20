@@ -8,20 +8,19 @@
 import FluentPostgreSQL
 import Vapor
 
-final class Company: PostgreSQLModel, Content, Codable, Migration{
-    init(id: Int?, name: String, clientID : Client.ID) {
-        self.id = id
+final class Company2: PostgreSQLUUIDModel, Content, Codable, Migration{
+    init(name: String, clientID : Client.ID) {
         self.name = name
         self.clientID = clientID
     }
     
-    var id: Int?
+    var id: UUID?
     var name: String
     var clientID : Client.ID
 }
 
-extension Company {
-    var companies: Parent<Company, Client> {
+extension Company2 {
+    var companies: Parent<Company2, Client> {
         return parent(\.clientID)
     }
 }

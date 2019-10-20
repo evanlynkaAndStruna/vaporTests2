@@ -15,7 +15,7 @@ final class Client: PostgreSQLModel, Content, Codable, Migration{
 }
 
 extension Client {
-    var companies: Children<Client, Company> {
+    var companies: Children<Client, Company2> {
         return children(\.clientID)
     }
 }

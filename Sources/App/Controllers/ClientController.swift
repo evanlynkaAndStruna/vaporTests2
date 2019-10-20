@@ -30,7 +30,7 @@ final class ClientController : RouteCollection{
 
 struct ClientResponse: Content {
     let client: Client
-    let companies: [Company]
+    let companies: [Company2]
 }
 
 //curl -H "Content-Type: application/json" -X POST -d '{"id": 2, "title": "ksiazka1"}' http://localhost:8080/todos

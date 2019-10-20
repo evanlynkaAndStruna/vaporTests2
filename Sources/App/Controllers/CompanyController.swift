@@ -15,13 +15,13 @@ final class CompanyController : RouteCollection{
         posts.get(use: get)
     }
     
-    func post(_ req: Request) throws -> Future<Company> {
-       return try req.content.decode(Company.self).flatMap {cl in
+    func post(_ req: Request) throws -> Future<Company2> {
+       return try req.content.decode(Company2.self).flatMap {cl in
            return cl.create(on: req)
        }
     }
     
-    func get(_ req: Request) throws -> Future<[Company]> {
-        return Company.query(on: req).all()
+    func get(_ req: Request) throws -> Future<[Company2]> {
+        return Company2.query(on: req).all()
     }
 }
